@@ -4,6 +4,9 @@ export default class ToDoManager extends LightningElement {
     @track time =  "9:00 AM";
     @track greeting = "Good morning!!";
 
+    //to store to-do tasks
+    @track toDos = [];
+
     connectedCallback() {
         this.getTime();
 
@@ -46,6 +49,32 @@ export default class ToDoManager extends LightningElement {
         else {
             this.greeting = "Good Evening!";
         }
+    }
+
+    addToDoHandler() {
+        const inputBox = this.template.querySelector("lightning-input");
+        console.log("Current value:", inputBox.value);
+
+        //Creating JS object to Push into To-do array
+        const todo = {
+            todoId: this.length,
+            todoName: inputBox.value,
+            done: false,
+            todoDate: new Date()
+        }
+        this.toDos.push(todo);
+        inputBox.value = "";
+    }
+
+    get upcomingTasks() {
+        return this.toDos && this.toDos.length 
+        ? this.toDos.filter( todo => !todo.done) 
+        : []
+    }
+    get completedTasks() {
+        return this.toDos && this.toDos.length 
+        ? this.toDos.filter( todo => todo.done) 
+        : []
     }
 }
 

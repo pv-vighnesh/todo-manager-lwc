@@ -30,3 +30,9 @@ setInterval() method repeatedly calls a function or executes a code snippet with
 Using @track decoarator to make a private property reactive. In this case, the time property, since we have used @track, it get's updated in the markup as well. Otherwise, it won't. 
 
 Adding text field and add button. 
+
+Key attribute in div tab - framework used to refresh that particular section of the list.
+
+get property is also a reactive property and it looks like a function. But it should return a value at the end
+
+Creating another component toDoItem now
