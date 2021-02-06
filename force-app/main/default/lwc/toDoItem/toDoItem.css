@@ -1,0 +1,30 @@
+.todo {
+    border: 1px solid lightslategray;
+    width: fit-content;
+    border-radius: 6px;
+    margin-top: 7px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: .4rem;
+    transition: all .5s ease;
+}
+
+.completed {
+    background-color: #4ac74e;
+    font-weight: bold;
+}
+
+.completed:hover {
+    background-color: #97d198;
+    border-radius: 3px;
+}
+
+.upcoming {
+    background-color: #eb7575;
+    font-weight: bold;
+}
+
+.upcoming:hover {
+    background-color: #ed9393;
+    border-radius: 3px;
+}

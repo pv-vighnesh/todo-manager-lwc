@@ -9,6 +9,7 @@ export default class ToDoManager extends LightningElement {
 
     connectedCallback() {
         this.getTime();
+        this.populateTodos();
 
         setInterval( () => {
             this.getTime();
@@ -71,10 +72,35 @@ export default class ToDoManager extends LightningElement {
         ? this.toDos.filter( todo => !todo.done) 
         : []
     }
+
     get completedTasks() {
         return this.toDos && this.toDos.length 
         ? this.toDos.filter( todo => todo.done) 
         : []
+    }
+
+    populateTodos() {
+        const todos = [
+            {
+                todoId: 0,
+                todoName: "Work-out",
+                done: false,
+                todoDate: new Date()
+            },
+            {
+                todoId: 1,
+                todoName: "Water the plants",
+                done: false,
+                todoDate: new Date()
+            },
+            {
+                todoId: 2,
+                todoName: "Read",
+                done: true,
+                todoDate: new Date()
+            },
+        ];
+        this.toDos = todos;
     }
 }
 

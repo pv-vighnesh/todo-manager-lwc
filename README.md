@@ -36,3 +36,8 @@ Key attribute in div tab - framework used to refresh that particular section of 
 get property is also a reactive property and it looks like a function. But it should return a value at the end
 
 Creating another component toDoItem now
+
+@api -  public property, which are used to accept the component from the parent component
+
+adding css to todoItems now
+
